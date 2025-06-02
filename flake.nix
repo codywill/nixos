@@ -30,31 +30,16 @@
         }
     );
     forEachSystem = f: lib.genAttrs systems (system: f pkgsFor.${system});
-    # forAllSystems = nixpkgs.lib.genAttrs systems;
   in {
     inherit lib;
     nixosModules = import ./modules/nixos;
     homeManagerModules = import ./modules/home-manager;
 
-    # packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
-    # formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
     packages = forEachSystem (pkgs: import ./pkgs {inherit pkgs;});
     formatter = forEachSystem (pkgs: pkgs.alejandra);
     overlays = import ./overlays {inherit inputs outputs;};
 
     nixosConfigurations = {
-      # desktop-nixos = lib.nixosSystem {
-      #   specialArgs = {inherit inputs outputs;};
-      #   modules = [
-      #     ./nixos/configuration.nix
-      #     home-manager.nixosModules.home-manager
-      #     {
-      #       home-manager.useGlobalPkgs = true;
-      #       home-manager.useUserPackages = true;
-      #       home-manager.users.cody = import ./home-manager/home.nix;
-      #     }
-      #   ];
-      # };
       desktop = lib.nixosSystem {
         modules = [./hosts/desktop];
         specialArgs = {inherit inputs outputs;};
