@@ -82,7 +82,10 @@
     };
   };
 
-  security.rtkit.enable = true;
+  security = {
+    rtkit.enable = true;
+    polkit.enable = true;
+  };
 
   # TODO: maybe move this
   services = {
