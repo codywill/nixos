@@ -44,11 +44,22 @@
         modules = [./hosts/desktop];
         specialArgs = {inherit inputs outputs;};
       };
+
+      yerin = lib.nixosSystem {
+        modules = [./hosts/yerin];
+        specialArgs = {inherit inputs outputs;};
+      };
     };
 
     homeConfigurations = {
       "cody@desktop" = lib.homeManagerConfiguration {
         modules = [./home/cody/desktop];
+        extraSpecialArgs = {inherit inputs outputs;};
+        pkgs = pkgsFor.x86_64-linux;
+      };
+
+      "cody@yerin" = lib.homeManagerConfiguration {
+        modules = [./home/cody/yerin];
         extraSpecialArgs = {inherit inputs outputs;};
         pkgs = pkgsFor.x86_64-linux;
       };

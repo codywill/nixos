@@ -13,11 +13,5 @@
     packages = with pkgs; [home-manager];
   };
 
-  # Enable automatic login
-  services.displayManager.autoLogin = {
-    enable = true;
-    user = "cody";
-  };
-
   home-manager.users.cody = import ../../../../home/cody/${config.networking.hostName};
 }
