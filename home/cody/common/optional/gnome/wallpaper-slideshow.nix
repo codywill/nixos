@@ -3,5 +3,3 @@
     gnomeExtensions.wallpaper-slideshow
   ];
 }
-
-
