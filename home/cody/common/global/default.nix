@@ -1,13 +1,15 @@
 {
-  inputs,
   lib,
   pkgs,
   config,
+  inputs,
   outputs,
   ...
 }: {
   imports =
-    []
+    [
+      inputs.sops-nix.homeManagerModules.sops
+    ]
     ++ builtins.attrValues outputs.homeManagerModules;
 
   options = {
@@ -74,10 +76,23 @@
       ];
     };
 
+    sops = {
+      defaultSopsFile = ../secrets/secrets.yaml;
+      age = {
+        sshKeyPaths = [ "${config.home.homeDirectory}/.ssh/id_ed25519" ];
+        keyFile = "${config.xdg.configHome}/sops/age/keys.txt";
+        generateKey = true;
+      };
+    };
+
     systemd.user.startServices = "sd-switch";
 
     programs = {
-      git.enable = true;
+      git = {
+        enable = true;
+        userName = "cody";
+        userEmail = "24554738+codywill@users.noreply.github.com";
+      };
       home-manager.enable = true;
       starship.enable = true;
       wezterm.enable = true;

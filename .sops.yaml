@@ -1,0 +1,7 @@
+keys:
+  - &cody age15ppammwrcd8tqe2scnz298f2redk7428l4dsj63u0rqqtegrhy4s3d88rv
+creation_rules:
+  - path_regex: home/cody/common/secrets/[^/]+\.(yaml|json|env|ini)$
+    key_groups:
+      - age:
+        - *cody
