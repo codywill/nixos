@@ -10,7 +10,7 @@
   ];
 
   networking = {
-    hostName = "desktop";
+    hostName = "lindon";
   };
 
   programs.steam = {

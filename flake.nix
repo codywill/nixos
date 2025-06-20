@@ -47,8 +47,8 @@
     overlays = import ./overlays {inherit inputs outputs;};
 
     nixosConfigurations = {
-      desktop = lib.nixosSystem {
-        modules = [./hosts/desktop];
+      lindon = lib.nixosSystem {
+        modules = [./hosts/lindon];
         specialArgs = {inherit inputs outputs;};
       };
 
@@ -59,8 +59,8 @@
     };
 
     homeConfigurations = {
-      "cody@desktop" = lib.homeManagerConfiguration {
-        modules = [./home/cody/desktop];
+      "cody@lindon" = lib.homeManagerConfiguration {
+        modules = [./home/cody/lindon];
         extraSpecialArgs = {inherit inputs outputs;};
         pkgs = pkgsFor.x86_64-linux;
       };
