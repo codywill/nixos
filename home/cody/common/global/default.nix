@@ -79,7 +79,7 @@
     sops = {
       defaultSopsFile = ../secrets/secrets.yaml;
       age = {
-        sshKeyPaths = [ "${config.home.homeDirectory}/.ssh/id_ed25519" ];
+        sshKeyPaths = ["${config.home.homeDirectory}/.ssh/id_ed25519"];
         keyFile = "${config.xdg.configHome}/sops/age/keys.txt";
         generateKey = true;
       };
