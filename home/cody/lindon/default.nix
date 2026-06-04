@@ -4,6 +4,8 @@
 
     ../common/optional/apps
     ../common/optional/gnome
+
+    ../common/optional/dev/nvidia-container-toolkit.nix
   ];
 
   # 4k screen configs
@@ -12,5 +14,5 @@
     "Xft.dpi" = 172;
   };
 
-  home.stateVersion = lib.mkDefault "25.05";
+  home.stateVersion = lib.mkDefault "26.05";
 }

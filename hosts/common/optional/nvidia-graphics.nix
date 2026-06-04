@@ -9,6 +9,8 @@
       nvidiaSettings = true;
       package = config.boot.kernelPackages.nvidiaPackages.latest;
     };
+
+    nvidia-container-toolkit.enable = true;
   };
 
   services.xserver.videoDrivers = ["nvidia"];

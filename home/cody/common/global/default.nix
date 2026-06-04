@@ -79,7 +79,7 @@
     sops = {
       defaultSopsFile = ../secrets/secrets.yaml;
       age = {
-        sshKeyPaths = [ "${config.home.homeDirectory}/.ssh/id_ed25519" ];
+        sshKeyPaths = ["${config.home.homeDirectory}/.ssh/id_ed25519"];
         keyFile = "${config.xdg.configHome}/sops/age/keys.txt";
         generateKey = true;
       };
@@ -90,8 +90,10 @@
     programs = {
       git = {
         enable = true;
-        userName = "cody";
-        userEmail = "24554738+codywill@users.noreply.github.com";
+        settings.user = {
+          name = "cody";
+          email = "24554738+codywill@users.noreply.github.com";
+        };
       };
       home-manager.enable = true;
       starship.enable = true;

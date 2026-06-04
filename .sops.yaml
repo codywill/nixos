@@ -1,7 +1,10 @@
 keys:
-  - &cody age15ppammwrcd8tqe2scnz298f2redk7428l4dsj63u0rqqtegrhy4s3d88rv
+  - &cody-yerin age15ppammwrcd8tqe2scnz298f2redk7428l4dsj63u0rqqtegrhy4s3d88rv
+  - &lindon age1qu2ykmf8pfxjanymwusnk3s9yfqmyl9dm5gfelap0kqd08jqlflqc3zjhn
+  - &cody-lindon age1cykgupxk72yvve2n3kklrt7yuek75ts9shmplth79ed292w4yufswd69z0
 creation_rules:
   - path_regex: home/cody/common/secrets/[^/]+\.(yaml|json|env|ini)$
     key_groups:
       - age:
-        - *cody
+        - *cody-yerin
+        - *cody-lindon
