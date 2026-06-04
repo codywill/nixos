@@ -5,6 +5,7 @@
     ../common/global
     ../common/users/cody
 
+    ../common/optional/docker.nix
     ../common/optional/nvidia-graphics.nix
     ../common/optional/xbox-controller.nix
   ];
@@ -23,10 +24,6 @@
   services.xserver = {
     enable = true;
 
-    # Enable the GNOME Desktop Environment.
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-
     # Configure keymap in X11
     xkb = {
       layout = "us";
@@ -34,5 +31,9 @@
     };
   };
 
-  system.stateVersion = "25.05";
+  # Enable the GNOME Desktop Environment.
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
+
+  system.stateVersion = "26.05";
 }

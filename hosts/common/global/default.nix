@@ -30,7 +30,7 @@
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-    kernelPackages = pkgs.linuxPackages_6_14;
+    kernelPackages = pkgs.linuxPackages_latest;
   };
 
   time.timeZone = "America/Los_Angeles";
@@ -66,7 +66,6 @@
       enable = true;
       defaultEditor = true;
     };
-    ssh.startAgent = true;
     tmux = {
       enable = true;
       clock24 = true;

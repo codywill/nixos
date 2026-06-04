@@ -8,6 +8,7 @@
     extraGroups = [
       "wheel"
       "networkmanager"
+      "docker"
     ];
     shell = pkgs.fish;
     packages = with pkgs; [home-manager];
