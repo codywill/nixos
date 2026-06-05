@@ -6,7 +6,6 @@
     ../common/global
     ../common/users/cody
 
-    ../common/optional/gnome-vrr.nix
     ../common/optional/goodix-fingerprint.nix
   ];
 
@@ -18,16 +17,16 @@
   services.xserver = {
     enable = true;
 
-    # Enable the GNOME Desktop Environment.
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-
     # Configure keymap in X11
     xkb = {
       layout = "us";
       variant = "";
     };
   };
+
+  # Enable the GNOME Desktop Environment.
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
 
   system.stateVersion = "26.05";
 }
