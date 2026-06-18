@@ -28,5 +28,9 @@
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
 
+  # services.displayManager.defaultSession = "niri";
+  # programs.xwayland.enable = true;
+  # programs.niri.enable = true;
+
   system.stateVersion = "26.05";
 }
