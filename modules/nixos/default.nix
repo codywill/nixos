@@ -77,6 +77,7 @@
     tailscale.enable = true;
   };
 
+  programs.niri.enable = true;
   services.xserver.xkb = {
     layout = "us";
     variant = "";
