@@ -1,0 +1,5 @@
+{...}: {
+  imports = [
+    ./goodix-fingerprint.nix
+  ];
+}

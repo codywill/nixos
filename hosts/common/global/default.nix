@@ -7,8 +7,8 @@
   imports =
     [
       inputs.home-manager.nixosModules.home-manager
-    ]
-    ++ (builtins.attrValues outputs.nixosModules);
+    ];
+    # ++ (builtins.attrValues outputs.nixosModules);
 
   home-manager = {
     useGlobalPkgs = true;

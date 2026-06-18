@@ -12,11 +12,6 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     niri-flake.url = "github:sodiboo/niri-flake";
 
     noctalia = {
@@ -46,8 +41,8 @@
     forEachSystem = f: lib.genAttrs systems (system: f pkgsFor.${system});
   in {
     inherit lib;
-    nixosModules = import ./modules/nixos;
-    homeManagerModules = import ./modules/home-manager;
+    # nixosModules = import ./modules/nixos;
+    # homeManagerModules = import ./modules/home;
 
     packages = forEachSystem (pkgs: import ./pkgs {inherit pkgs;});
     devShells = forEachSystem (pkgs: import ./shell.nix {inherit pkgs;});
@@ -67,14 +62,8 @@
     };
 
     homeConfigurations = {
-      "cody@lindon" = lib.homeManagerConfiguration {
-        modules = [./home/cody/lindon];
-        extraSpecialArgs = {inherit inputs outputs;};
-        pkgs = pkgsFor.x86_64-linux;
-      };
-
-      "cody@yerin" = lib.homeManagerConfiguration {
-        modules = [./home/cody/yerin];
+      "cody" = lib.homeManagerConfiguration {
+        modules = [./users/cody];
         extraSpecialArgs = {inherit inputs outputs;};
         pkgs = pkgsFor.x86_64-linux;
       };

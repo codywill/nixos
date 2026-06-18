@@ -1,6 +1,5 @@
 {
   pkgs,
-  config,
   ...
 }: {
   users.users.cody = {
@@ -14,5 +13,5 @@
     packages = with pkgs; [home-manager];
   };
 
-  home-manager.users.cody = import ../../../../home/cody/${config.networking.hostName};
+  home-manager.users.cody = import ../../../../users/cody;
 }
