@@ -19,16 +19,13 @@ in {
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [fuzzel swaylock];
 
-    programs.niri = {
-      enable = true;
-      settings = {
-        outputs."eDP-1".scale = 2.0;
-        spawn-at-startup = [
-          {
-            command = ["noctalia"];
-          }
-        ];
-      };
+    programs.niri.settings = {
+      outputs."eDP-1".scale = 2.0;
+      spawn-at-startup = [
+        {
+          command = ["noctalia"];
+        }
+      ];
     };
   };
 }

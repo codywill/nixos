@@ -6,6 +6,9 @@
 }: let
   cfg = config.goodix-fingerprint;
 in {
+  options.goodix-fingerprint = {
+    enable = lib.mkEnableOption "Enable goodix fingerprint reader";
+  };
   config = lib.mkIf cfg.enable {
     systemd.services.fprintd = {
       wantedBy = ["multi-user.target"];
