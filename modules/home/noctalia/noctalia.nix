@@ -39,6 +39,26 @@ in {
         shell = {
           ui-scale = 2.0;
         };
+
+        bar.main = {
+          auto_hide = true;
+          reserve_space = false;
+          end = [
+            "tray"
+            "notifications"
+            "clipboard"
+            "network"
+            "bluetooth"
+            "volume"
+            "brightness"
+            "battery"
+            "control-center"
+            "session"
+          ];
+        };
+
+        location.address = "Los Angeles, CA";
+        weather.enabled = true;
       };
     };
   };

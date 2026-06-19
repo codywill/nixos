@@ -90,8 +90,6 @@
 
       # Application launchers
       "Mod+T" = {
-        # hotkey-overlay.title = "Open a Terminal: alacritty";
-        # action.spawn = "alacritty";
         hotkey-overlay.title = "Open a Terminal: wezterm";
         action.spawn = "wezterm";
       };
@@ -100,8 +98,8 @@
         action.spawn = "fuzzel";
       };
       "Super+Alt+L" = {
-        hotkey-overlay.title = "Lock the Screen: swaylock";
-        action.spawn = "swaylock";
+        hotkey-overlay.title = "Lock the Screen";
+        action.spawn-sh = ["noctalia msg session lock"];
       };
       "Super+Alt+S" = {
         allow-when-locked = true;
