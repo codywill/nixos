@@ -58,7 +58,10 @@ in {
         };
 
         location.address = "Los Angeles, CA";
-        weather.enabled = true;
+        weather = {
+          enabled = true;
+          unit = "imperial";
+        };
       };
     };
   };
