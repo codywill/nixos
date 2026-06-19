@@ -15,6 +15,7 @@
     btop
     dwt1-shell-color-scripts
     fastfetch
+    gcr
     jq
     lazygit
     lua51Packages.lua
@@ -46,4 +47,5 @@
       warn-dirty = false;
     };
   };
+  services.gnome-keyring.enable = true;
 }

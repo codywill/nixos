@@ -9,5 +9,7 @@
   networking.hostName = "yerin";
   goodix-fingerprint.enable = true;
 
-  home-manager.users.cody = import ../../users/cody/home.nix;
+  home-manager.users.cody = {
+    imports = [../../users/cody/home.nix ./niri-outputs.nix];
+  };
 }

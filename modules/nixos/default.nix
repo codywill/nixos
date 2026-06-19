@@ -1,5 +1,6 @@
 {
   inputs,
+  lib,
   outputs,
   pkgs,
   ...
@@ -57,6 +58,10 @@
   security = {
     rtkit.enable = true;
     polkit.enable = true;
+    pam.services.greetd = {
+      enableGnomeKeyring = true;
+      fprintAuth = lib.mkForce false;
+    };
   };
 
   services = {
@@ -79,7 +84,9 @@
   };
 
   programs.niri.enable = true;
+
   noctalia-greeter.enable = true;
+
   services.xserver.enable = true;
   services.xserver.xkb = {
     layout = "us";
