@@ -12,7 +12,7 @@
   hardware.xone.enable = true;
 
   home-manager.users.cody = {
-    imports = [ ../../users/cody/home.nix ./niri-outputs.nix ];
+    imports = [../../users/cody/home.nix ./niri-outputs.nix];
   };
 
   programs.steam = {

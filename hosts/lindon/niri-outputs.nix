@@ -1,17 +1,17 @@
 {...}: {
   programs.niri.settings.outputs = {
     "LG Electronics LG TV SSCR2 0x01010101" = {
-       focus-at-startup = true;
-       position = {
-         x = 0;
-         y = 0;
-       };
-       mode = {
-         width = 3840;
-         height = 2160;
-         refresh = 119.880;
-       };
-     };
+      focus-at-startup = true;
+      position = {
+        x = 0;
+        y = 0;
+      };
+      mode = {
+        width = 3840;
+        height = 2160;
+        refresh = 119.880;
+      };
+    };
     "Dell Inc. Dell S2716DG #ASNVXbMXJiXd" = {
       position = {
         x = 3840;

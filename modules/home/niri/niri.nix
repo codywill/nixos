@@ -17,7 +17,11 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    home.packages = with pkgs; [fuzzel swaylock xwayland-satellite];
+    home.packages = with pkgs; [
+      fuzzel
+      swaylock
+      xwayland-satellite
+    ];
 
     programs.niri.settings = {
       spawn-at-startup = [
