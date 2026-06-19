@@ -9,6 +9,7 @@
     ./devtools
     ./docker
     ./goodix-fingerprint
+    ./noctalia-greeter
     ./nvidia-gpu
   ];
 
@@ -78,6 +79,8 @@
   };
 
   programs.niri.enable = true;
+  noctalia-greeter.enable = true;
+  services.xserver.enable = true;
   services.xserver.xkb = {
     layout = "us";
     variant = "";
