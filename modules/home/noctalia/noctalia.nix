@@ -15,14 +15,16 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
+    home.file.".config/noctalia/palettes/CatppuccinCustom.json".source = ./CatppuccinCustom.json;
+
     programs.noctalia = {
       enable = true;
 
       settings = {
         theme = {
           mode = "dark";
-          source = "builtin";
-          builtin = "Catppuccin";
+          source = "custom";
+          custom_palette = "CatppuccinCustom";
         };
 
         wallpaper = {
