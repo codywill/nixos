@@ -63,8 +63,8 @@
       fprintAuth = lib.mkForce false;
     };
     pam.services.noctalia = {
-      fprintAuth = true;
       enableGnomeKeyring = true;
+      fprintAuth = true;
     };
   };
 

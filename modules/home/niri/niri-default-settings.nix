@@ -94,8 +94,8 @@
         action.spawn = "wezterm";
       };
       "Mod+D" = {
-        hotkey-overlay.title = "Run an Application: fuzzel";
-        action.spawn = "fuzzel";
+        hotkey-overlay.title = "Open launcher";
+        action.spawn-sh = ["noctalia msg panel-toggle launcher"];
       };
       "Super+Alt+L" = {
         hotkey-overlay.title = "Lock the Screen";
@@ -291,12 +291,13 @@
       "Alt+Print".action.screenshot-window = {};
 
       # Keyboard shortcuts inhibitor escape hatch
-      "Mod+Escape" = {
+      "Mod+Shift+Escape" = {
         allow-inhibiting = false;
         action.toggle-keyboard-shortcuts-inhibit = {};
       };
 
       # Session
+      "Mod+Escape".action.spawn-sh = ["noctalia msg panel-toggle session"];
       "Mod+Shift+E".action.quit = {};
       "Ctrl+Alt+Delete".action.quit = {};
       "Mod+Shift+P".action.power-off-monitors = {};
