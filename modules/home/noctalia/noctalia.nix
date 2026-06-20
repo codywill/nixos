@@ -64,6 +64,10 @@ in {
           enabled = true;
           unit = "imperial";
         };
+
+        plugins.enabled = [
+          "noctalia/screen-recorder"
+        ];
       };
     };
   };

@@ -301,6 +301,9 @@
       "Mod+Shift+E".action.quit = {};
       "Ctrl+Alt+Delete".action.quit = {};
       "Mod+Shift+P".action.power-off-monitors = {};
+
+      # Misc
+      "Mod+F1".action.spawn-sh = ["noctalia msg plugin noctalia/screen_recorder:service all toggle"];
     };
   };
 }

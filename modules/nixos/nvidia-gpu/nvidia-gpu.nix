@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: let
   cfg = config.nvidia-gpu;
@@ -24,5 +25,9 @@ in {
     };
 
     services.xserver.videoDrivers = ["nvidia"];
+    programs.gpu-screen-recorder.enable = true;
+    environment.systemPackages = with pkgs; [
+      gpu-screen-recorder-gtk
+    ];
   };
 }
