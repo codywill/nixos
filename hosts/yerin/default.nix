@@ -10,6 +10,6 @@
   goodix-fingerprint.enable = true;
 
   home-manager.users.cody = {
-    imports = [../../users/cody/home.nix ./niri-outputs.nix];
+    imports = [../../users/cody/home.nix ./niri-settings.nix];
   };
 }

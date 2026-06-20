@@ -1,22 +1,3 @@
-# {
-#   lib,
-#   pkgs,
-#   config,
-#   inputs,
-#   outputs,
-#   ...
-# }: {
-#   options = {
-#     # TODO: migrate dotfiles to nix
-#     dotfiles = lib.mkOption {
-#       type = lib.types.path;
-#       apply = toString;
-#       default = "${config.home.homeDirectory}/sources/codywill/dotfiles";
-#       example = "${config.home.homeDirectory}/sources/codywill/dotfiles";
-#       description = "Location of the dotfiles working directory";
-#     };
-#   };
-# }
 {
   config,
   lib,
