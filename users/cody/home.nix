@@ -1,9 +1,10 @@
 {
   pkgs,
+  outputs,
   ...
 }: {
   imports = [
-    ../../modules/home
+    outputs.homeManagerModules
   ];
   niri.enable = true;
   noctalia.enable = true;

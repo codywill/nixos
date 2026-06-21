@@ -1,7 +1,11 @@
-{pkgs, ...}: {
+{
+  outputs,
+  pkgs,
+  ...
+}: {
   imports = [
+    outputs.nixosModules
     ./hardware-configuration.nix
-    ../../modules/nixos
     ../../users/cody
   ];
 

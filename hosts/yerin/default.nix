@@ -1,8 +1,12 @@
-{inputs, ...}: {
+{
+  inputs,
+  outputs,
+  ...
+}: {
   imports = [
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-x1-13th-gen
+    outputs.nixosModules
     ./hardware-configuration.nix
-    ../../modules/nixos
     ../../users/cody
   ];
 
