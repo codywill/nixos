@@ -1,4 +1,7 @@
-{...}: {
+{
+  pkgs,
+  ...
+}: {
   imports = [
     ../../modules/home
   ];
@@ -8,6 +11,13 @@
   home = {
     username = "cody";
     homeDirectory = "/home/cody";
+    packages = with pkgs; [
+      obsidian
+      slack
+      sone
+      vesktop
+      vivaldi
+    ];
   };
 
   dotfiles = {
@@ -25,4 +35,6 @@
     name = "cody";
     email = "24554738+codywill@users.noreply.github.com";
   };
+
+  services.gnome-keyring.enable = true;
 }
