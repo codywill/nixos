@@ -11,6 +11,7 @@
   niri.enable = true;
   noctalia.enable = true;
   starship.enable = true;
+  wezterm.enable = true;
 
   home = {
     username = "cody";
@@ -29,7 +30,6 @@
     configs = {
       tmux = "tmux";
       nvim = "nvim/.config/nvim";
-      wezterm = "wezterm";
     };
   };
 

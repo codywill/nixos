@@ -6,7 +6,7 @@
   cfg = config.fish;
 in {
   options.fish = {
-    enable = lib.mkEnableOption "Use fish config";
+    enable = lib.mkEnableOption "Use fish home config";
   };
   config = lib.mkIf cfg.enable {
     programs.fish = {

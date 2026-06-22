@@ -11,6 +11,7 @@
     ./noctalia
     ./nvidia-dev
     ./starship
+    ./wezterm
   ];
 
   home = {
@@ -35,7 +36,6 @@
   programs = {
     git.enable = true;
     home-manager.enable = true;
-    wezterm.enable = true;
   };
 
   nix = {

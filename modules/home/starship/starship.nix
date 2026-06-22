@@ -6,7 +6,7 @@
   cfg = config.starship;
 in {
   options.starship = {
-    enable = lib.mkEnableOption "Use starship config";
+    enable = lib.mkEnableOption "Use starship home config";
   };
   config = lib.mkIf cfg.enable {
     programs.starship = {
