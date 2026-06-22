@@ -7,6 +7,10 @@
 in {
   options.wezterm = {
     enable = lib.mkEnableOption "Use wezterm home config";
+    extraSettings = lib.mkOption {
+      type = lib.types.attrsOf lib.types.anything;
+      default = { };
+    };
   };
   config = lib.mkIf cfg.enable {
     programs.wezterm = {
@@ -34,7 +38,7 @@ in {
             top = 0;
             bottom = 0;
         };
-      };
+      } // cfg.extraSettings;
     };
   };
 }
