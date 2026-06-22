@@ -6,8 +6,11 @@
   imports = [
     outputs.homeManagerModules
   ];
+
+  fish.enable = true;
   niri.enable = true;
   noctalia.enable = true;
+  starship.enable = true;
 
   home = {
     username = "cody";
@@ -24,11 +27,9 @@
   dotfiles = {
     path = "/home/cody/sources/codywill/dotfiles";
     configs = {
-      fish = "fish/.config/fish";
       tmux = "tmux";
       nvim = "nvim/.config/nvim";
       wezterm = "wezterm";
-      "starship.toml" = "starship/.config/starship.toml";
     };
   };
 

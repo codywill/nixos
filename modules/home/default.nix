@@ -5,10 +5,12 @@
 }: {
   imports = [
     ./dotfiles
+    ./fish
     ./gnome-desktop
     ./niri
     ./noctalia
     ./nvidia-dev
+    ./starship
   ];
 
   home = {
@@ -33,7 +35,6 @@
   programs = {
     git.enable = true;
     home-manager.enable = true;
-    starship.enable = true;
     wezterm.enable = true;
   };
 
