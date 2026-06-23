@@ -11,6 +11,7 @@
     ./noctalia
     ./nvidia-dev
     ./starship
+    ./vesktop
     ./wezterm
   ];
 

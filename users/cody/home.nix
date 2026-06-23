@@ -11,6 +11,7 @@
   niri.enable = true;
   noctalia.enable = true;
   starship.enable = true;
+  vesktop.enable = true;
   wezterm.enable = true;
 
   home = {

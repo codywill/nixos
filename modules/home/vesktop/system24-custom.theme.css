@@ -1,0 +1,183 @@
+/**
+ * @name system24 (catppuccin custom)
+ * @description a tui-style discord theme. adapted from system24 catppuccin mocha to match CatppuccinCustom noctalia palette.
+ * @author refact0r (original), adapted by cody
+ * @version 2.0.0
+ * @website https://github.com/refact0r/system24
+ * @source https://github.com/refact0r/system24/blob/master/theme/system24-catppuccin-mocha.theme.css
+*/
+
+/* import theme modules */
+@import url('https://refact0r.github.io/system24/build/system24.css');
+
+body {
+    /* font, change to '' for default discord font */
+    --font: 'VictorMono NFM SemiBold';
+    --code-font: 'DM Mono';
+    font-weight: 300;
+    letter-spacing: -0.05ch;
+
+    /* sizes */
+    --gap: 8px;
+    --divider-thickness: 4px;
+    --border-thickness: 2px;
+    --border-hover-transition: 0.2s ease;
+
+    /* animation/transition options */
+    --animations: on;
+    --list-item-transition: 0.2s ease;
+    --dms-icon-svg-transition: 0.4s ease;
+
+    /* top bar options */
+    --top-bar-height: var(--gap);
+    --top-bar-button-position: titlebar;
+    --top-bar-title-position: off;
+    --subtle-top-bar-title: off;
+
+    /* window controls */
+    --custom-window-controls: off;
+    --window-control-size: 14px;
+
+    /* dms button options */
+    --custom-dms-icon: off; /* off: use default discord icon, hide: remove icon entirely, custom: use custom icon */
+    --dms-icon-svg-url: url(''); /* icon svg url. MUST BE A SVG. */
+    --dms-icon-svg-size: 90%; /* size of the svg (css mask-size property) */
+    --dms-icon-color-before: var(--icon-subtle); /* normal icon color */
+    --dms-icon-color-after: var(--white); /* icon color when button is hovered/selected */
+    --custom-dms-background: off; /* off to disable, image to use a background image (must set url variable below), color to use a custom color/gradient */
+    --dms-background-image-url: url(''); /* url of the background image */
+    --dms-background-image-size: cover; /* size of the background image (css background-size property) */
+    --dms-background-color: linear-gradient(70deg, var(--blue-2), var(--purple-2), var(--red-2)); /* fixed color/gradient (css background property) */
+
+
+    /* background image options */
+    --background-image: off;
+    --background-image-url: url('');
+
+    /* transparency/blur options */
+    --transparency-tweaks: off;
+    --remove-bg-layer: off;
+    --panel-blur: off;
+    --blur-amount: 12px;
+    --bg-floating: var(--bg-3);
+
+    /* other options */
+    --small-user-panel: on;
+
+    /* unrounding options */
+    --unrounding: on;
+
+    /* styling options */
+    --custom-spotify-bar: on;
+    --ascii-titles: on;
+    --ascii-loader: system24;
+
+    /* panel labels */
+    --panel-labels: on;
+    --label-color: var(--text-muted);
+    --label-font-weight: 500;
+}
+
+/* color options */
+:root {
+    --colors: on;
+
+    /* text colors
+     * mOnSurface (#cccccc) → bright text
+     * mOnSurfaceVariant (#aaaaaa) → normal text
+     * mOutline (#666666) → muted/subtle text
+     */
+    --text-0: var(--bg-3);          /* text on colored elements */
+    --text-1: #cccccc;              /* mOnSurface — other normally white text */
+    --text-2: #cccccc;              /* mOnSurface — headings and important text */
+    --text-3: #aaaaaa;              /* mOnSurfaceVariant — normal text */
+    --text-4: #777777;              /* between mOutline and mOnSurfaceVariant — icon buttons and channels */
+    --text-5: #666666;              /* mOutline — muted channels/chats and timestamps */
+
+    /* background and dark colors
+     * mSurface (#202020) → main background
+     * mSurfaceVariant (#444444) → raised elements
+     * mShadow (#222222) → deep background/spacing
+     */
+    --bg-1: #444444;                /* mSurfaceVariant — dark buttons when clicked */
+    --bg-2: #333333;                /* between surface and variant — dark buttons */
+    --bg-3: #222222;                /* mShadow — spacing, secondary elements */
+    --bg-4: #202020;                /* mSurface — main background color */
+    --hover: hsla(0, 0%, 50%, 0.1);         /* mHover at low opacity */
+    --active: hsla(0, 0%, 50%, 0.2);        /* mHover at medium opacity */
+    --active-2: hsla(0, 0%, 50%, 0.3);      /* mHover at higher opacity */
+    --message-hover: hsla(0, 0%, 0%, 0.1);  /* messages when hovered */
+
+    /* accent colors — driven by mPrimary (#abbff3, soft blue)
+     * 5 shades: lightest → darkest, stepping lightness down ~5% each
+     */
+    --accent-1: #c3d0f6;            /* mPrimary lightened — links and accent text */
+    --accent-2: #abbff3;            /* mPrimary — small accent elements */
+    --accent-3: #93aef0;            /* mPrimary darkened — accent buttons */
+    --accent-4: #7b9ded;            /* mPrimary more darkened — accent buttons hovered */
+    --accent-5: #638cea;            /* mPrimary most darkened — accent buttons clicked */
+    --accent-new: var(--accent-2);
+    --mention: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 90%) 40%, transparent);
+    --mention-hover: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 95%) 40%, transparent);
+    --reply: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 90%) 40%, transparent);
+    --reply-hover: linear-gradient(to right, color-mix(in hsl, var(--text-3), transparent 95%) 40%, transparent);
+
+    /* status indicator colors — mapped to terminal normal colors */
+    --online: var(--green-2);       /* terminal green #99d783 */
+    --dnd: var(--red-2);            /* terminal red #ea746c */
+    --idle: var(--yellow-2);        /* terminal yellow #ffe081 */
+    --streaming: var(--accent-2);   /* mPrimary blue */
+    --offline: var(--text-4);
+
+    /* border colors */
+    --border-light: var(--hover);
+    --border: var(--active);
+    --border-hover: var(--accent-2);
+    --button-border: hsla(0, 0%, 100%, 0.1);
+
+    /* base color scales — derived from terminal colors
+     * normal color = mid-point (~shade 2/3), bright = lighter end (~shade 1)
+     * shades step lightness by ~5% each
+     *
+     * red:    normal #ea746c, bright #ff8595
+     * green:  normal #99d783, bright #89c96e (bright is slightly darker/more saturated)
+     * blue:   normal #00baee, bright #00a8d6
+     * yellow: normal #ffe081, bright #e8cc6a (bright is slightly darker)
+     * purple: magenta normal #f592d6, bright #f07bc8
+     */
+
+    /* red — terminal red normal hsl(≈4°,76%,70%), bright hsl(≈352°,100%,74%) */
+    --red-1: #ff9da8;               /* brightest */
+    --red-2: #ff8595;               /* terminal bright red */
+    --red-3: #ea746c;               /* terminal normal red */
+    --red-4: #d4625a;               /* darkened */
+    --red-5: #be5048;               /* darkest */
+
+    /* green — terminal green normal hsl(≈104°,51%,67%), bright hsl(≈104°,44%,60%) */
+    --green-1: #b0e89a;             /* brightest */
+    --green-2: #99d783;             /* terminal normal green */
+    --green-3: #89c96e;             /* terminal bright green */
+    --green-4: #74b359;             /* darkened */
+    --green-5: #5f9d44;             /* darkest */
+
+    /* blue — terminal blue normal hsl(≈194°,100%,47%), bright hsl(≈194°,100%,42%) */
+    --blue-1: #33ccff;              /* brightest */
+    --blue-2: #00baee;              /* terminal normal blue */
+    --blue-3: #00a8d6;              /* terminal bright blue */
+    --blue-4: #0096be;              /* darkened */
+    --blue-5: #0084a6;              /* darkest */
+
+    /* yellow — terminal yellow normal hsl(≈48°,100%,75%), bright hsl(≈47°,79%,66%) */
+    --yellow-1: #ffec99;            /* brightest */
+    --yellow-2: #ffe081;            /* terminal normal yellow */
+    --yellow-3: #e8cc6a;            /* terminal bright yellow */
+    --yellow-4: #d1b853;            /* darkened */
+    --yellow-5: #baa43c;            /* darkest */
+
+    /* purple — terminal magenta normal hsl(≈316°,88%,76%), bright hsl(≈316°,82%,71%) */
+    --purple-1: #f8ace3;            /* brightest */
+    --purple-2: #f592d6;            /* terminal normal magenta */
+    --purple-3: #f07bc8;            /* terminal bright magenta */
+    --purple-4: #e064ba;            /* darkened */
+    --purple-5: #d04dac;            /* darkest */
+}
